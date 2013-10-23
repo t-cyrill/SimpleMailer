@@ -8,13 +8,21 @@ This is PHP mail function wrapper.
 Installation
 --------------------
 
+## Composer
+
 Download the [`composer.phar`](http://getcomposer.org/composer.phar).
 
 ``` sh
 $ curl -s http://getcomposer.org/installer | php
 ```
 
-Run Composer: `php composer.phar install`
+Run Composer: `php composer.phar require "t-cyrill/net-simple-mailer"`
+
+## Direct Install
+
+Simplemailer is one PHP file library.
+
+We can use `Simplemailer`, using `require 'SimpleMailer.php'`
 
 Usage
 --------------------
