@@ -1,7 +1,8 @@
 SimpleMailer
 ============
 
-SimpleMailer is a lightweight PHP 5.3 library. (Support PHP 5.4 and PHP 5.5)
+SimpleMailer is a lightweight PHP 5.3 library. (Support PHP 5.4 and PHP 5.5).
+
 This is PHP mail function wrapper.
 
 Installation
