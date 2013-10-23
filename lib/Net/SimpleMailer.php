@@ -86,11 +86,11 @@ class SimpleMailer {
         $message = $this->message;
 
         if (empty($from)) {
-            throw new InvalidArgumentException('`from` is not set. You must set `from`');
+            throw new \InvalidArgumentException('`from` is not set. You must set `from`');
         }
 
         if (empty($from)) {
-            throw new InvalidArgumentException('`to` is not set. You must set one `to` at least');
+            throw new \InvalidArgumentException('`to` is not set. You must set one `to` at least');
         }
 
         $internal_encoding = mb_internal_encoding();
@@ -117,6 +117,10 @@ class SimpleMailer {
 
         $attachments_body = '';
         foreach ($this->files as $file) {
+            if (!is_file($file)) {
+                throw new \RuntimeException("File `$file` does not exists.");
+            }
+
             $filename = basename($file);
             $file_contents = file_get_contents($file);
             $encoded_attachment = chunk_split(base64_encode($file_contents), 76, $this->separator);
