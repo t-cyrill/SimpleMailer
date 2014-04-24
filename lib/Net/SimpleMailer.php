@@ -89,7 +89,7 @@ class SimpleMailer {
             throw new \InvalidArgumentException('`from` is not set. You must set `from`');
         }
 
-        if (empty($from)) {
+        if (empty($to)) {
             throw new \InvalidArgumentException('`to` is not set. You must set one `to` at least');
         }
 
