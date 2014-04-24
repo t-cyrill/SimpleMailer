@@ -136,7 +136,7 @@ class SimpleMailer {
         $body = $message_body . $this->separator . $attachments_body . "--{$boundary}--";
         $headers = $this->buildHeaders($headers);
 
-        return array($to, $subject, $body, $headers, '-f'.$from);
+        return array($to, $subject, $body, $headers, '-f'.escapeshellcmd($from));
     }
 
     /**
