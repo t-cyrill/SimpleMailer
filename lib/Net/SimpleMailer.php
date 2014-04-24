@@ -75,7 +75,7 @@ class SimpleMailer {
     /**
      * Convert SimpleMailer to array.
      *
-     * @return array array expression. [0] => $to, [1] => $subject, [2] => $body, [3] => $headers, [4] => $addtional
+     * @return array array expression. [0] => $to, [1] => $subject, [2] => $body, [3] => $headers, [4] => $additional
      */
     public function toArray() {
         $boundary = '=_' . md5(uniqid('', true));
@@ -143,8 +143,8 @@ class SimpleMailer {
      * Send email using PHP's mail function.
      */
     public function send() {
-        list($to, $subject, $body, $headers, $addtional) = $this->toArray();
-        mail($to, $subject, $body, $headers, $addtional);
+        list($to, $subject, $body, $headers, $additional) = $this->toArray();
+        mail($to, $subject, $body, $headers, $additional);
     }
 
     private function buildHeaders(array $headers) {
